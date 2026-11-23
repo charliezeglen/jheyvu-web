@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-abyss: #0b0611;
+    --bg-chamber: #130b1c;
+    --bg-grimoire: #1d1128;
+    --bg-velvet: #271637;
+    --gold-blossom: #f2c97d;
+    --gold-antique: #c89d51;
+    --amethyst-elixir: #b56eff;
+    --lilac-cloak: #d8b4e2;
+    --crimson-ilka: #9e2a3b;
+    --text-parchment: #f4effa;
+    --text-silver: #b9a8cc;
+    --text-muted: #7e6b94;
+  }
+
+  html {
+    background-color: #0b0611;
+    color: #f4effa;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0b0611;
+    background-image: 
+      radial-gradient(circle at 18% 12%, rgba(181, 110, 255, 0.12) 0%, transparent 40%),
+      radial-gradient(circle at 85% 24%, rgba(242, 201, 125, 0.08) 0%, transparent 35%),
+      radial-gradient(circle at 50% 65%, rgba(115, 52, 168, 0.1) 0%, transparent 50%);
+    overflow-x: hidden;
+  }
+}
+
+.font-display {
+  font-family: 'Cinzel Decorative', Georgia, serif;
+}
+
+.font-serif-lore {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-mono-rune {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Gothic Arch & Grimoire Borders */
+.grimoire-panel {
+  position: relative;
+  background: linear-gradient(165deg, rgba(32, 18, 45, 0.88) 0%, rgba(16, 9, 25, 0.94) 100%);
+  border: 1px solid rgba(242, 201, 125, 0.24);
+  box-shadow: 
+    0 24px 60px -15px rgba(5, 2, 10, 0.9),
+    inset 0 1px 0 0 rgba(242, 201, 125, 0.22),
+    inset 0 0 32px rgba(181, 110, 255, 0.06);
+}
+
+.grimoire-panel::before {
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px solid rgba(216, 180, 226, 0.1);
+  pointer-events: none;
+}
+
+.gothic-arch-frame {
+  border-radius: 180px 180px 18px 18px;
+}
+
+/* Pixel crisp rendering for Minecraft skins */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+
+/* Subtle parchment & stone grain overlay */
+.sanctuary-grain {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Magical Shimmer & Keyframes */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(0.8deg);
+  }
+}
+
+@keyframes pulseAura {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverseSlow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes runeSweep {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    top: -10%;
+    opacity: 0;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-pulse-aura {
+  animation: pulseAura 4.5s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spinSlow 28s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spinReverseSlow 22s linear infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0611;
+  border-left: 1px solid rgba(242, 201, 125, 0.12);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4b286d 0%, #8650b8 50%, #c89d51 100%);
+  border-radius: 2px;
+  border: 2px solid #0b0611;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #683896 0%, #b56eff 50%, #f2c97d 100%);
+}
