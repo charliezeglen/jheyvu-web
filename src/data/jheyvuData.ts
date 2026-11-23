@@ -423,7 +423,7 @@ export const SOCIAL_PORTALS: SocialPortal[] = [
     subtitle: 'Społeczność Jheyvu',
     description: 'Serwer Discord skupiający społeczność Jheyvu. Poznaj nowych ludzi, rozmawiaj o grach i spędzaj wspólnie czas!',
     url: 'https://discord.com/invite/faaTujmWUE',
-    runeCode: 'DISCORD.GG/ELIKSIRKI',
+    runeCode: 'DISCORD',
     accent: '#8c9eff',
     cta: 'Wstąp do Eliksirków',
   },
